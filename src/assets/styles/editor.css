@@ -1,0 +1,43 @@
+/* Editor Container */
+.editor-container {
+    width: 600px;
+    height: 400px;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    padding: 16px;
+    background: #fff;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    overflow-y: auto;
+    font-family: "Inter", sans-serif;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Editor Content */
+.editor-container .ProseMirror {
+    outline: none;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+    height: 100%;
+    font-size: 18px;
+    padding: 12px;
+    line-height: 1.6;
+    color: #333;
+    text-align: left; /* Keeps the cursor on the left */
+}
+
+/* Remove default paragraph margin */
+.editor-container .ProseMirror p {
+    margin: 0;
+}
+
+/* Scrollbar Styling */
+.editor-container::-webkit-scrollbar {
+    width: 6px;
+}
+
+.editor-container::-webkit-scrollbar-thumb {
+    background: #bbb;
+    border-radius: 10px;
+}

@@ -1,33 +1,27 @@
 .share-container {
-    width: 250px;
-    height: 200px;
-    border-radius: 8px;
-    padding: 16px;
-    background-color: white;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  /* Share & Join Buttons */
-  .share-btn {
-    width: 100%;
-    margin-top: 10px;
-    padding: 10px;
-    font-size: 16px;
-    border-radius: 6px;
-    border: none;
-    cursor: pointer;
-    transition: 0.3s;
-  }
-  
-  .share-btn {
-    background: #007bff;
-    color: white;
-  }
-  
-  .share-btn:hover {
-    background: #0056b3;
-  }
+  width: 100%;
+  padding: 8px;
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+}
 
-  .code-0{
-    padding: 5px;
-  }
+.share-container button {
+  width: 100%;
+  margin-top: 5px;
+  padding: 8px; 
+  margin-bottom: 25px;
+}
+
+.share-container .MuiTextField-root {
+  width: 100%; 
+  margin-bottom: 5px;
+}
+
+.share-container .MuiToggleButtonGroup-root {
+  width: 100%;
+  margin-bottom: 5px; /* Adds spacing between toggle buttons and input */
+}

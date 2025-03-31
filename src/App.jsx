@@ -1,5 +1,5 @@
-import React ,{useState} from "react"
-import Editor from "./components/Editor"
+import React, { useState } from "react";
+import Editor from "./components/Editor";
 import { Button, Typography, Container, Grid } from "@mui/material";
 import Share from "./components/Share";
 import Sidebar from "./components/Sidebar";
@@ -7,45 +7,33 @@ import "./App.css";
 
 const App = () => {
   const [versions, setVersions] = useState([]);
+  const [editorContent, setEditorContent] = useState("");
 
-  const saveVersion = (content) => {
-    if (content.trim()) {
-      const newVersion = { id: Date.now(), content };
+  const saveVersion = () => {
+    if (editorContent.trim()) {
+      const newVersion = { id: Date.now(), content: editorContent };
       setVersions((prevVersions) => [...prevVersions, newVersion]);
     }
   };
 
   const restoreVersion = (content) => {
-    console.log("Restoring version:", content);
+    setEditorContent(content);
   };
 
   return (
     <div className="app-container">
+      {/* Sidebar (Version History + Share) */}
       <Sidebar versions={versions} restoreVersion={restoreVersion} />
 
-      <div className="main-content">
-        <Typography variant="h4" align="center" className="page-title"  sx={{ marginBottom: "20px" }}>
+      {/* Main Editor Area */}
+      <div className="editor-section">
+        <Typography variant="h4" className="page-title">
           Jaadugar Ki Jaadui Duniya...
-          </Typography>
+        </Typography>
 
-        <Container maxWidth="lg">
-          <Grid container justifyContent="center" alignItems="flex-start" spacing={3}>
-            <Grid item xs={6}>
-              <Editor saveVersion={saveVersion} />
-              <Button
-                variant="contained"
-                color="primary"
-                onClick={() => saveVersion("Current editor content")}
-                sx={{ marginTop: 2 }}
-              >
-                Save Version
-              </Button>
-            </Grid>
-            <Grid item xs={3}>
-              <Share />
-            </Grid>
-          </Grid>
-        </Container>
+        <Editor setEditorContent={setEditorContent} editorContent={editorContent} />
+
+        <button className="save-btn" onClick={saveVersion}>Save Version</button>
       </div>
     </div>
   );

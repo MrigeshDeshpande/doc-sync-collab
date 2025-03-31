@@ -1,10 +1,11 @@
 import React from "react";
 import "../assets/styles/sidebar.css"
+import Share from "../components/Share"
 
 const Sidebar = ({ versions, restoreVersion }) => {
     return (
       <div className="sidebar-container">
-        <h3>Version History</h3>
+        <h3 className="sidebar-title">Version History</h3>
         {versions.length === 0 ? (
           <p className="no-versions">No versions saved yet.</p>
         ) : (
@@ -12,15 +13,17 @@ const Sidebar = ({ versions, restoreVersion }) => {
             {versions.map((version, index) => (
               <li key={version.id} className="version-item">
                 <span>Version {index + 1}</span>
-                <button className="restore-btn" onClick={() => restoreVersion(version.content)}>
-                  Restore
-                </button>
+                <button className="restore-btn" onClick={() => restoreVersion(version.content)}>Restore</button>
               </li>
             ))}
           </ul>
         )}
+          <div className="share-wrapper">
+          <Share />
+        </div>
       </div>
     );
   };
+  
 
 export default Sidebar;

@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import { EditorContent, useEditor } from "@tiptap/react";
 import StarterKit from "@tiptap/starter-kit";
 import Placeholder from "@tiptap/extension-placeholder";
@@ -17,6 +17,13 @@ const Editor = ({ setEditorContent, editorContent }) => {
       setEditorContent(editor.getHTML());
     },
   });
+
+  useEffect(() => {
+    if (editor && editorContent !== editor.getHTML()) {
+        console.log("Updating editor with restored content:", editorContent);
+        editor.commands.setContent(editorContent);
+    }
+}, [editorContent, editor]);
 
   if (!editor) return null;
 

@@ -27,3 +27,8 @@
 .save-btn:hover {
   background: #218838;
 }
+
+.version-item::before {
+  content: "📝";
+  margin-right: 5px;
+}

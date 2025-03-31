@@ -12,8 +12,16 @@ const Sidebar = ({ versions, restoreVersion }) => {
           <ul className="version-list">
             {versions.map((version, index) => (
               <li key={version.id} className="version-item">
-                <span>Version {index + 1}</span>
-                <button className="restore-btn" onClick={() => restoreVersion(version.content)}>Restore</button>
+          <span>Version {index + 1} ({version.timestamp})</span>
+          <button 
+  className="restore-btn" 
+  onClick={() => {
+    console.log("Clicked Restore for Version", index);
+    restoreVersion(index);
+  }}
+>
+  Restore
+</button>
               </li>
             ))}
           </ul>

@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import Editor from "./components/Editor";
-import { Button, Typography, Container, Grid } from "@mui/material";
-import Share from "./components/Share";
+import { Typography } from "@mui/material";
 import Sidebar from "./components/Sidebar";
 import "./App.css";
 
@@ -10,15 +9,32 @@ const App = () => {
   const [editorContent, setEditorContent] = useState("");
 
   const saveVersion = () => {
-    if (editorContent.trim()) {
-      const newVersion = { id: Date.now(), content: editorContent };
+    if (String(editorContent).trim()) {
+      const newVersion = {
+        id: Date.now(),
+        content: editorContent,
+        timestamp: new Date().toLocaleString(),
+      };
       setVersions((prevVersions) => [...prevVersions, newVersion]);
     }
   };
-
-  const restoreVersion = (content) => {
-    setEditorContent(content);
+  
+  
+  const restoreVersion = (versionIndex) => {
+    console.log("Restore button clicked for version:", versionIndex);
+  
+    if (!versions[versionIndex]) {
+      console.error("Error: Version not found!");
+      return;
+    }
+  
+    console.log("Restoring content:", versions[versionIndex].content);
+    setEditorContent(versions[versionIndex].content);
+    console.log("Editor content should now be:", versions[versionIndex].content);
   };
+  
+  
+  
 
   return (
     <div className="app-container">

@@ -14,7 +14,7 @@ const Share = () => {
       alert("Document code copied to clipboard!");
     };
   
-    const handleModeChange = (event, newMode) => {
+    const handleModeChange = (newMode) => {
       if (newMode !== null) setMode(newMode);
     };
   
@@ -23,7 +23,7 @@ const Share = () => {
         <Typography variant="h6"> {mode === "share" ? "Share Document" : "Join Document"} </Typography>
   
         {/* Toggle between Share & Join Mode */}
-        <ToggleButtonGroup
+        <ToggleButtonGroup className="code-0"
           value={mode}
           exclusive
           onChange={handleModeChange}
@@ -56,6 +56,9 @@ const Share = () => {
               variant="outlined"
               fullWidth
             />
+             <Button onClick={handleCopy} variant="contained" color="primary" sx={{ marginTop: 1 }}>
+             Let's Go
+            </Button>
           </Box>
         )}
       </Box>

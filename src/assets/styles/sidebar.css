@@ -1,0 +1,64 @@
+/* Sidebar Sticks to the Left */
+.sidebar-container {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    width: 250px;
+    background: #f4f4f4;
+    padding: 20px;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+}
+
+/* Align Sidebar Text */
+h3 {
+    margin-bottom: 10px;
+    font-size: 18px;
+    text-align: center;
+}
+
+.no-versions {
+    color: #666;
+    font-style: italic;
+    text-align: center;
+}
+
+/* Version List */
+.version-list {
+    list-style: none;
+    padding: 0;
+}
+
+.version-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 12px;
+    background: #ffffff;
+    border-radius: 6px;
+    margin-bottom: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Restore Button */
+.restore-btn {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.restore-btn:hover {
+    background: #0056b3;
+}
+
+/* Ensures Main Content is Pushed to Right */
+.app-container {
+    display: flex;
+    margin-left: 260px; /* Push content away from sidebar */
+    padding: 20px;
+}

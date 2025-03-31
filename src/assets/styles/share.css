@@ -1,35 +1,33 @@
-/* Container for the Share component */
 .share-container {
-    border: 1px solid #ddd;
+    width: 250px;
+    height: 200px;
     border-radius: 8px;
     padding: 16px;
-    background-color: #f8f9fa;
+    background-color: white;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 300px;
-    height: fit-content;
-    margin-top: 10px; /* Adds top margin for better alignment */
-}
+  }
+  
+  /* Share & Join Buttons */
+  .share-btn {
+    width: 100%;
+    margin-top: 10px;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .share-btn {
+    background: #007bff;
+    color: white;
+  }
+  
+  .share-btn:hover {
+    background: #0056b3;
+  }
 
-/* Center text in the Share component */
-.share-container h6 {
-    margin-bottom: 12px;
-}
-
-/* Toggle buttons styling */
-.MuiToggleButtonGroup-root {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 16px;
-}
-
-/* Adjust input field spacing */
-.share-container .MuiTextField-root {
-    margin-bottom: 12px;
-}
-
-/* Responsive layout */
-@media (max-width: 768px) {
-    .share-container {
-        width: 100%;
-    }
-}
+  .code-0{
+    padding: 5px;
+  }

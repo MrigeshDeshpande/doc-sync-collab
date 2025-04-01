@@ -4,9 +4,9 @@ import StarterKit from "@tiptap/starter-kit";
 import TextAlign from "@tiptap/extension-text-align";
 import Link from "@tiptap/extension-link";
 import TextStyle from "@tiptap/extension-text-style";
-import FontFamily from "@tiptap/extension-font-family"; // For font type
-import Color from "@tiptap/extension-color"; // For text color
-import RightRail from "./RightRail"; // Toolbar component
+import FontFamily from "@tiptap/extension-font-family";  
+import Color from "@tiptap/extension-color"; 
+import RightRail from "./RightRail";
 
 import "../assets/styles/editor.css";
 
@@ -30,7 +30,7 @@ const Editor = ({ setEditorContent, editorContent }) => {
     ],
     content: editorContent, 
     onUpdate: ({ editor }) => {
-      setEditorContent(editor.getHTML()); // Update content state
+      setEditorContent(editor.getHTML());
     },
   });
 

@@ -68,11 +68,6 @@ const RightRail = ({ editor }) => {
         {/* Clear Formatting */}
         <Button onClick={() => editor.chain().focus().clearNodes().run()}>Clear Formatting</Button>
   
-        {/* Horizontal Line */}
-        <Button onClick={() => editor.chain().focus().setHorizontalRule().run()}>Horizontal Line</Button>
-  
-        {/* Emoji Picker */}
-        <Button onClick={() => editor.chain().focus().insertContent('😊').run()}>Insert Emoji</Button>
       </div>
     );
   };

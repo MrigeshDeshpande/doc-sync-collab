@@ -4,8 +4,8 @@ import StarterKit from "@tiptap/starter-kit";
 import TextAlign from "@tiptap/extension-text-align";
 import Link from "@tiptap/extension-link";
 import TextStyle from "@tiptap/extension-text-style";
-import FontFamily from "@tiptap/extension-font-family";  
-import Color from "@tiptap/extension-color"; 
+import FontFamily from "@tiptap/extension-font-family";
+import Color from "@tiptap/extension-color";
 import RightRail from "./RightRail";
 
 import "../assets/styles/editor.css";
@@ -13,22 +13,22 @@ import "../assets/styles/editor.css";
 const Editor = ({ setEditorContent, editorContent }) => {
   const editor = useEditor({
     extensions: [
-      StarterKit, 
+      StarterKit,
       TextStyle,
       FontFamily.configure({
-        types: ['textStyle'], 
+        types: ["textStyle"],
       }),
-     
+
       Color.configure({
-        types: ["textStyle"], 
+        types: ["textStyle"],
       }),
-     
+
       TextAlign.configure({
-        types: ["paragraph", "heading"], 
+        types: ["paragraph", "heading"],
       }),
       Link,
     ],
-    content: editorContent, 
+    content: editorContent,
     onUpdate: ({ editor }) => {
       setEditorContent(editor.getHTML());
     },
@@ -56,7 +56,7 @@ const Editor = ({ setEditorContent, editorContent }) => {
       </div>
 
       {/* Toolbar */}
-      <RightRail editor={editor} /> 
+      <RightRail editor={editor} />
     </div>
   );
 };

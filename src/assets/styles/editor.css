@@ -1,6 +1,6 @@
 .editor-section {
   flex-grow: 1;
-  margin-left: 270px; 
+  margin-left: 270px;
   padding: 20px;
   display: flex;
   flex-direction: column;
@@ -8,7 +8,7 @@
 }
 
 .editor-container {
-  flex-grow: 1; 
+  flex-grow: 1;
   background: #fff;
   border-radius: 5px;
   padding: 15px;
@@ -20,7 +20,7 @@
   flex-direction: column;
   margin-left: 22px;
   margin-right: 200px;
-  max-width: calc(100vw - 300px); 
+  max-width: calc(100vw - 300px);
   border-radius: 20px;
   position: relative;
 }
@@ -39,7 +39,7 @@
 }
 
 .version-history {
-  flex-grow: 1; 
+  flex-grow: 1;
   overflow-y: auto;
   max-height: 80vh;
 }
@@ -61,7 +61,6 @@
   position: absolute;
   bottom: 10px;
   left: 50%;
-
 }
 
 .save-btn:hover {
@@ -71,9 +70,9 @@
 .tiptap {
   min-height: 100%;
   width: 100%;
-  outline: none; 
+  outline: none;
   padding: 10px;
-  font-size: 16px; 
+  font-size: 16px;
   line-height: 1.5;
   cursor: text;
   font-size: larger;

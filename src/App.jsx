@@ -18,23 +18,22 @@ const App = () => {
       setVersions((prevVersions) => [...prevVersions, newVersion]);
     }
   };
-  
-  
+
   const restoreVersion = (versionIndex) => {
     console.log("Restore button clicked for version:", versionIndex);
-  
+
     if (!versions[versionIndex]) {
       console.error("Error: Version not found!");
       return;
     }
-  
+
     console.log("Restoring content:", versions[versionIndex].content);
     setEditorContent(versions[versionIndex].content);
-    console.log("Editor content should now be:", versions[versionIndex].content);
+    console.log(
+      "Editor content should now be:",
+      versions[versionIndex].content,
+    );
   };
-  
-  
-  
 
   return (
     <div className="app-container">
@@ -47,9 +46,14 @@ const App = () => {
           Jaadugar Ki Jaadui Duniya...
         </Typography>
 
-        <Editor setEditorContent={setEditorContent} editorContent={editorContent} />
+        <Editor
+          setEditorContent={setEditorContent}
+          editorContent={editorContent}
+        />
 
-        <button className="save-btn" onClick={saveVersion}>Save Version</button>
+        <button className="save-btn" onClick={saveVersion}>
+          Save Version
+        </button>
       </div>
     </div>
   );

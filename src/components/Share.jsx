@@ -1,5 +1,12 @@
 import React, { useState } from "react";
-import { TextField, Button, Typography, Box, ToggleButtonGroup, ToggleButton } from "@mui/material";
+import {
+  TextField,
+  Button,
+  Typography,
+  Box,
+  ToggleButtonGroup,
+  ToggleButton,
+} from "@mui/material";
 import { v4 as uuidv4 } from "uuid";
 import "../assets/styles/share.css";
 
@@ -19,7 +26,10 @@ const Share = () => {
 
   return (
     <Box className="share-container">
-      <Typography variant="h6"> {mode === "share" ? "Share Document" : "Join Document"} </Typography>
+      <Typography variant="h6">
+        {" "}
+        {mode === "share" ? "Share Document" : "Join Document"}{" "}
+      </Typography>
 
       <ToggleButtonGroup
         value={mode}
@@ -42,7 +52,11 @@ const Share = () => {
             variant="outlined"
             fullWidth
           />
-          <Button onClick={handleCopy} variant="contained" className="share-btn">
+          <Button
+            onClick={handleCopy}
+            variant="contained"
+            className="share-btn"
+          >
             Copy Code
           </Button>
         </Box>
@@ -57,7 +71,9 @@ const Share = () => {
             fullWidth
           />
           <Button
-            onClick={() => inputCode.trim() && alert(`Joining document: ${inputCode}`)}
+            onClick={() =>
+              inputCode.trim() && alert(`Joining document: ${inputCode}`)
+            }
             variant="contained"
             className="share-btn"
             disabled={!inputCode.trim()}
